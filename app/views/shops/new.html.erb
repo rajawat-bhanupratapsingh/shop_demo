@@ -17,6 +17,10 @@
             <%= f.label :description, class: "field-title" %>
             <%= f.text_area :description, class: "form-control" %>
           </div>
+          <div class="form-group">
+            <label class="field-title">Upload Shop Image</label>
+            <%= f.file_field :photo %>
+          </div>
           <label class="field-title">Latitude and Longitude</label>
           <p>(Auto fetch by click on the map)</p>
           <div class="form-group">
