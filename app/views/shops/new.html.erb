@@ -3,26 +3,38 @@
     <h4 class="form-title">Register your Shop</h4>
     <br/>
     <div class="row">
-      <%= form_for @shop do |f| %>
-        <div class="col-md-5">
+      <div class="col-md-5">
+        <%= form_for @shop do |f| %>
           <div class="form-group">
             <%= f.label :name, class: "field-title" %>
             <%= f.text_field :name, class: "form-control" %>
           </div>
           <div class="form-group">
             <%= f.label :address, class: "field-title" %>
-            <%= f.text_area :name, class: "form-control" %>
+            <%= f.text_area :address, class: "form-control" %>
           </div>
           <div class="form-group">
             <%= f.label :description, class: "field-title" %>
             <%= f.text_area :description, class: "form-control" %>
           </div>
+          <label class="field-title">Latitude and Longitude</label>
+          <p>(Auto fetch by click on the map)</p>
+          <div class="form-group">
+            <div class="col-md-6 no-left-pd">
+              <%= f.text_field :latitude, class: "form-control" %>
+            </div>
+            <div class="col-md-6 no-right-pd">
+              <%= f.text_field :longitude, class: "form-control" %>
+            </div>
+          </div>
           <br/><br/>
-          <%= f.submit "Submit Review", class: "btn btn-lg btn-success" %>
-        </div>
-        <div class="col-md-7">
-          <div id="map" style="height: 400px;"></div>
-        </div>
-      <% end %>
+          <%= f.submit "Submit Review", class: "btn btn-success" %>
+        <% end %>
+      </div>
+      <div class="col-md-7">
+        <%= render partial: 'search' %>
+        <br/>
+        <div id="map" style="height: 400px;"></div>
+      </div>
   </div>
 </div>
