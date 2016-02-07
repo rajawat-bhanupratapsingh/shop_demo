@@ -1,5 +1,6 @@
 class ShopsController < ApplicationController
   def index
+    @shops = Shop.all
   end
 
   def new
@@ -25,10 +26,6 @@ class ShopsController < ApplicationController
       flash[:error] = e.message
       redirect_to :back
     end
-  end
-
-  def index
-    @shops = Shop.all
   end
 
   private

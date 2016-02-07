@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <% @shops.each do |shop| %>
+      <div class="col-md-3 shop-detail-index">
+        <h4><%= link_to shop.name, shop_path(shop), target: '_blank' %></h4>
+        <strong>Addrss:</strong>
+        <%= shop.address %>
+        <p class="description">
+          <%= shop.description %>
+        </p>
+      </div>
+    <% end %>
+  </div>
+</div>
