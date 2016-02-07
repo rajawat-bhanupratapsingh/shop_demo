@@ -1,6 +1,18 @@
 .no-left-pd {
-	padding-left: 0;
+  padding-left: 0;
 }
 .no-right-pd {
-	padding-right: 0;
+  padding-right: 0;
+}
+.shop-detail {
+  .photo {
+    width: 100%;
+  }
+  .description {
+    font-size: 12px;
+    color: #8d9299;
+  }
+  .left {
+    border-right: 1px solid #e7e7e7;
+  }
 }

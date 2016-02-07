@@ -11,17 +11,24 @@ class ShopsController < ApplicationController
     begin
       @shop.save!
       flash[:notice] = "Your shop is registered successfully"
-      redirect_to new_shop_path
+      redirect_to shop_path(@shop)
     rescue Exception => e
       render action: :new
       flash[:error] = e.message
     end
-
   end
 
-  def search_map
-    address = params[:search_map][:address]
-    @latitude, @longitude = Geocoder.coordinates address
+  def show
+    begin
+      @shop = Shop.find(params[:id])
+    rescue Exception => e
+      flash[:error] = e.message
+      redirect_to :back
+    end
+  end
+
+  def index
+    @shops = Shop.all
   end
 
   private
