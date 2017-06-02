@@ -1,5 +1,29 @@
-<h4>Data:<br>
+<h4>Geocoder-Data: <br>
 <%= request.location.data %></h4>
 <br>
 <h4><%= "Latitude: #{request.location.latitude}" %></h4>
 <h4><%= "Longitude: #{request.location.longitude}" %></h4>
+
+<h4>Geolocation-Data:</h4>
+<p>Click the button to get your coordinates.</p>
+
+<button onclick="getLocation()">Try It</button>
+
+<p id="demo"></p>
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;
+}
+</script>
