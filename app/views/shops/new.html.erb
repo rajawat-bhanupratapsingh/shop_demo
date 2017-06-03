@@ -21,6 +21,10 @@
             <label class="field-title">Upload Shop Image</label>
             <%= f.file_field :photo %>
           </div>
+          <div class="form-group">
+            <%= check_box_tag :location_by_photo %>
+            <label class="field-title">Grab location by uploaded photo</label>
+          </div>
           <label class="field-title">Latitude and Longitude</label>
           <p>(Auto fetch by click on the map)</p>
           <div class="form-group">
